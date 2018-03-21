@@ -20,28 +20,20 @@ class ConcentrationInfo extends Component {
   returnConcentrations(Concentrations, id) {
     if (Concentrations) {
       return (
-        <Info
-          name={id}
-          concentration={Concentrations[id]} />
+        <div>
+          <h2>Department</h2>
+          <h3>{Concentrations[id].Department}</h3>
+
+          <h2>About</h2>
+          <h3>{Concentrations[id].About}</h3>
+
+          <a href={Concentrations[id].Link}>Learn More</a>
+        </div>
       )
     } else {
       return (<p>Loading...</p>)
     }
   }
-}
-
-const Info = ({ ...props }) => {
-  return (
-    <div>
-      <h2>Department</h2>
-      <h3>{props.concentration.Department}</h3>
-
-      <h2>About</h2>
-      <h3>{props.concentration.About}</h3>
-
-      <a href={props.concentration.Link}>Learn More</a>
-    </div>
-  )
 }
 
 
